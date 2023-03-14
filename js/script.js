@@ -53,21 +53,12 @@ createApp({
                 this.currentImg = 0
             }
         },
-        // autoplay
-        autoplay(){
-            this.slides.forEach(element => {
-                this.currentImg++;
-                if (this.currentImg > this.slides.length -1){
-                    this.currentImg = 0
-                }    
-                return element
-                
-        })
-    },
     //Intervallo autoplay
-    intervallAuto(){
-        setInterval(this.autoplay(),3);
-    }},
-    created(){this.intervallAuto()}
-
-}).mount('#app')
+        intervallAuto(){
+            if (currentImg !== -1){
+                myTimer = setInterval(function(){next(currentImg + 1)}, 3);
+            };
+        },
+        //created 
+        created(){this.intervallAuto()}
+}}).mount('#app')
