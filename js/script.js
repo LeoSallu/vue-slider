@@ -57,16 +57,17 @@ createApp({
         autoplay(){
             this.slides.forEach(element => {
                 this.currentImg++;
-                if(this.currentImg===this.slides.length -1){
-                    this.currentImg = 0;
-                }
-                return element;
-            });
-        },
-        //Intervallo autoplay
-        intervallAuto(){
-            setInterval(this.autoplay(),3)
-        }
+                if (this.currentImg > this.slides.length -1){
+                    this.currentImg = 0
+                }    
+                return element
+                
+        })
     },
-    created(){intervallAuto()}
+    //Intervallo autoplay
+    intervallAuto(){
+        setInterval(this.autoplay(),3);
+    }},
+    created(){this.intervallAuto()}
+
 }).mount('#app')
