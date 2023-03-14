@@ -52,6 +52,16 @@ createApp({
             if (this.currentImg > this.slides.length -1){
                 this.currentImg = 0
             }
+        },
+        // autoplay
+        autoplay(){
+            this.slides.forEach(element => {
+                this.currentImg++;
+                if(this.currentImg===this.slides.length -1){
+                    this.currentImg = 0;
+                }
+                return element;
+            });
         }
     }
 }).mount('#app')
