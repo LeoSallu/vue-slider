@@ -65,7 +65,8 @@ createApp({
         },
         //Intervallo autoplay
         intervallAuto(){
-            setInterval(this.autoplay,30)
+            setInterval(this.autoplay(),3)
         }
-    }
+    },
+    created(){intervallAuto()}
 }).mount('#app')
